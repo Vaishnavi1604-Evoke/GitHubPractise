@@ -1,0 +1,25 @@
+h1
+{
+    color:chartreuse;
+    font-style:oblique;
+}
+
+table
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width :auto;
+   
+}
+tr,td
+{
+    margin: 5px;
+    padding: 5px;
+}
+
+#Submit
+{
+    background-color:chartreuse;
+    color:black;
+    font-weight:bold;
+}
