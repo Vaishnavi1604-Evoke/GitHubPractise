@@ -3,30 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copilot</title>
+    <title>Sweet Cakes - Cake Booking</title>
     <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
-    <h1>Welcome to Copilot</h1>
-    <p>Please fill in your details below:</p>
-    <br>
-    <table>
-        <tr>
-            <th>Name :</th>
-            <td><input type="text" maxlength="15" id="name"></td>
-        </tr>
-        <tr>
-            <th>RollNumber :</th>
-            <td><input type="number" maxlength="2" max="10" id="rollnumber"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td> <button name="Submit" id="submit" onclick="HandleSubmit()">Submit</button></td>
-        </tr>
-    </table>
+    <div class="container">
+        <header>
+            <h1>🎂 Sweet Cakes Bakery</h1>
+            <p>Book Your Perfect Cake Today!</p>
+        </header>
 
-<script src="index.js"></script>
+        <main>
+            <div class="booking-section">
+                <h2>Cake Booking Form</h2>
+                
+                <form id="bookingForm">
+                    <!-- Customer Details -->
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="123-456-7890" pattern="[0-9\-\s]+">
+                    </div>
+
+                    <!-- Cake Selection -->
+                    <div class="form-group">
+                        <label for="cakeType">Cake Type *</label>
+                        <select id="cakeType" name="cakeType" required>
+                            <option value="">-- Select Cake Type --</option>
+                            <option value="vanilla">Vanilla Cake</option>
+                            <option value="chocolate">Chocolate Cake</option>
+                            <option value="strawberry">Strawberry Cake</option>
+                            <option value="carrot">Carrot Cake</option>
+                            <option value="redvelvet">Red Velvet Cake</option>
+                            <option value="cheesecake">Cheesecake</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="size">Cake Size *</label>
+                        <select id="size" name="size" required>
+                            <option value="">-- Select Size --</option>
+                            <option value="small">Small (6 servings) - $25</option>
+                            <option value="medium">Medium (10 servings) - $40</option>
+                            <option value="large">Large (15 servings) - $60</option>
+                            <option value="xlarge">Extra Large (20 servings) - $80</option>
+                        </select>
+                    </div>
+
+                    <!-- Toppings -->
+                    <div class="form-group">
+                        <label>Toppings *</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="sprinkles" name="toppings" value="sprinkles">
+                            <label for="sprinkles" class="checkbox-label">Sprinkles (+$5)</label>
+
+                            <input type="checkbox" id="chocolate_chips" name="toppings" value="chocolate_chips">
+                            <label for="chocolate_chips" class="checkbox-label">Chocolate Chips (+$5)</label>
+
+                            <input type="checkbox" id="berries" name="toppings" value="berries">
+                            <label for="berries" class="checkbox-label">Fresh Berries (+$8)</label>
+
+                            <input type="checkbox" id="nuts" name="toppings" value="nuts">
+                            <label for="nuts" class="checkbox-label">Nuts (+$6)</label>
+
+                            <input type="checkbox" id="whipped_cream" name="toppings" value="whipped_cream">
+                            <label for="whipped_cream" class="checkbox-label">Whipped Cream (+$4)</label>
+                        </div>
+                    </div>
+
+                    <!-- Date and Time -->
+                    <div class="form-group">
+                        <label for="deliveryDate">Delivery Date *</label>
+                        <input type="date" id="deliveryDate" name="deliveryDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialRequest">Special Requests</label>
+                        <textarea id="specialRequest" name="specialRequest" rows="4" placeholder="Any special instructions or dietary requirements..."></textarea>
+                    </div>
+
+                    <!-- Delivery Option -->
+                    <div class="form-group">
+                        <label>Delivery Option *</label>
+                        <div class="radio-group">
+                            <input type="radio" id="pickup" name="delivery" value="pickup" required>
+                            <label for="pickup" class="radio-label">Pick Up (Free)</label>
+
+                            <input type="radio" id="delivery" name="delivery" value="delivery" required>
+                            <label for="delivery" class="radio-label">Delivery (+$10)</label>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-submit">Book Now</button>
+                        <button type="reset" class="btn btn-reset">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Bookings Summary -->
+            <div class="summary-section">
+                <h2>Booking Summary</h2>
+                <div id="bookingSummary">
+                    <p style="text-align: center; color: #999;">No booking yet. Fill the form above!</p>
+                </div>
+                <div id="bookingsList" class="bookings-list"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Sweet Cakes Bakery. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="index.js"></script>
 </body>
-
 </html>
